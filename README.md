@@ -30,6 +30,8 @@ Projeto prático desenvolvido para simulação completa de um teste de seguranç
 * Selecione:
   * Modo: Host-Only Adapter
 
+---
+
 ### 3. Reconhecimento de Portas (Nmap)
 Varredura inicial para identificar os serviços e portas abertas na máquina alvo:
 ```bash
