@@ -1,4 +1,4 @@
-#  Relatório de Testes de Intrusão: Nmap, Enum4linux, Medusa e SMB
+#  Relatório de testes praticos em ambiente vulneravel
 
 Projeto prático desenvolvido para simulação completa de um teste de segurança (*Pentest*), cobrindo reconhecimento, enumeração, força bruta em aplicações web e acesso remoto a sistemas através do ambiente controlado **Metasploitable 2**.
 
@@ -11,8 +11,24 @@ Projeto prático desenvolvido para simulação completa de um teste de seguranç
 * **Tipo de Rede:** Host-Only (Isolada para testes de segurança)
 
 ---
+## Ferramentas utilizadas
+*  Medusa
+* FTP
+* SMB
+* DVWA
+
+---
 
 ##  Etapas da Execução Prática
+
+### 1. Preparacao dos ambientes
+* Instale o VirtualBox
+* Metasploitable 2
+
+### 2. Configurar rede
+* Vá em Configurações > Rede
+* Selecione:
+  * Modo: Host-Only Adapter
 
 ### 1. Reconhecimento de Portas (Nmap)
 Varredura inicial para identificar os serviços e portas abertas na máquina alvo:
