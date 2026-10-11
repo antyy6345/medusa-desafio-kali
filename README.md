@@ -24,6 +24,7 @@ Projeto prático desenvolvido para simulação completa de um teste de seguranç
 ### 1. Preparacao dos ambientes
 * Instale o VirtualBox
 * Metasploitable 2
+* kali linux
 
 ### 2. Configurar rede
 * Vá em Configurações > Rede
